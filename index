@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bear Jackets & LCM Dotaciones</title>
+  <link rel="stylesheet" href="StyleSheet.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">
+      <img src="img/logo-bear.png" alt="Bear Jackets">
+    </div>
+
+    <nav class="nav">
+      <a href="#">INICIO</a>
+      <a href="#">CATÁLOGOS</a>
+      <a href="#">NOSOTROS</a>
+    </nav>
+
+    <div class="logo-secundario">
+      <img src="img/logo-lcm.png" alt="LCM Dotaciones">
+    </div>
+
+    <!-- Botón hamburguesa -->
+    <div class="menu-toggle" id="menu-toggle">
+      ☰
+    </div>
+  </header>
+
+  <!-- Menú móvil -->
+  <div class="menu-movil" id="menu-movil">
+    <a href="#">INICIO</a>
+    <a href="#">CATÁLOGOS</a>
+    <a href="#">NOSOTROS</a>
+  </div>
+
+  <!-- Contenedor principal dividido en dos -->
+  <main class="contenedor">
+    <!-- Sección izquierda -->
+    <section class="columna izquierda">
+      <div class="contenido">
+        <h1>BEAR <br><span>JACKETS</span></h1>
+        <p>TU CHAQUETA, TU ESTILO</p>
+        <a href="#" class="btn claro">CATÁLOGO</a>
+
+        <!-- Logo debajo del texto -->
+        <div class="marca-fondo">
+          <img src="Imagenes/Logo bear.png" alt="Fondo Bear">
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección derecha -->
+    <section class="columna derecha">
+      <div class="contenido">
+        <h1>LCM <br><span>DOTACIONES</span></h1>
+        <p>TODO PARA TU EMPRESA</p>
+        <a href="#" class="btn oscuro">CATÁLOGO</a>
+
+        <!-- Logo debajo del texto -->
+        <div class="marca-fondo">
+          <img src="Imagenes/Logo LCM.png" alt="Fondo LCM">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="contacto">
+      <p><strong>CONTACTANOS POR:</strong></p>
+      <p>WHATSAPP: 3506219368</p>
+    </div>
+    <div class="correo">
+      <p><strong>CORREO:</strong></p>
+      <p>bearjackets@gmail.com</p>
+      <p>lcmdotaciones@gmail.com</p>
+    </div>
+    <div class="ubicacion">
+      <p><strong>ENCUÉNTRANOS:</strong></p>
+      <p>Carrera 85H #53-73 Bogotá</p>
+    </div>
+    <div class="redes">
+      <a href="#"><img src="img/icon-facebook.svg" alt="Facebook"></a>
+      <a href="#"><img src="img/icon-instagram.svg" alt="Instagram"></a>
+      <a href="#"><img src="img/icon-whatsapp.svg" alt="WhatsApp"></a>
+      <a href="#"><img src="img/icon-tiktok.svg" alt="TikTok"></a>
+    </div>
+    <p class="derechos">TODOS LOS DERECHOS RESERVADOS</p>
+  </footer>
+
+  <!-- Script menú -->
+  <script>
+    const toggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu-movil');
+
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('activo');
+    });
+  </script>
+</body>
+</html>
