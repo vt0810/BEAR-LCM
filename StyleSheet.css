@@ -1,0 +1,225 @@
+/* === Reset básico === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Bebas Neue', sans-serif;
+  background-color: #fff;
+  color: #000;
+}
+
+/* === Header === */
+.header {
+  width: 60%;
+  height: 80px;
+  margin: 0 auto;
+  background-color: rgba(229, 229, 229, 0.8); /*color semitransparente*/
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 2rem;
+  position:absolute ;
+  top: 2rem; /* separación desde arriba */
+  left: 0;
+  right: 0;
+  z-index: 1000; /*por encima del contenido */
+  backdrop-filter: blur(8px); /* efecto de desenfoque */
+}
+.nav a {
+  margin: 0 1.5rem;
+  text-decoration: none;
+  color: #000;
+  font-weight: 600;
+}
+
+/* Botón hamburguesa */
+.menu-toggle {
+  display: none;
+  font-size: 4rem;
+  cursor: pointer;
+}
+
+/* Menú móvil */
+.menu-movil {
+  display: none;
+  flex-direction: column;
+  background-color: #e5e5e5;
+  text-align: center;
+}
+
+.menu-movil a {
+  padding: 1rem;
+  text-decoration: none;
+  color: #000;
+  border-bottom: 1px solid #ccc;
+}
+
+.menu-movil.activo {
+  display: flex;
+}
+
+/* === Contenedor principal === */
+.contenedor {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+}
+
+/* Columnas */
+.columna {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.izquierda {
+  background-color: #000;
+  color: #fff;
+}
+
+.derecha {
+  background-color: #fff;
+  color: #000;
+}
+
+/* Contenido */
+.contenido {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+}
+
+.contenido h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.contenido span {
+  font-weight: 400;
+}
+
+.contenido p {
+  margin: 1rem 0;
+  font-weight: 500;
+}
+
+/* Botones */
+.btn {
+  display: inline-block;
+  padding: 0.7rem 1.5rem;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.btn.claro {
+  background-color: #fff;
+  color: #000;
+}
+
+.btn.oscuro {
+  background-color: #000;
+  color: #fff;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+/* Logo debajo del texto */
+.marca-fondo {
+  margin-top: 2rem;
+}
+
+.marca-fondo img {
+  width: 60%;
+  max-width: 50%;
+  opacity: 0.9;
+  display: block;
+  margin: 0 auto;
+}
+/* Alineación específica para cada lado */
+.izquierda .contenido {
+  align-items: flex-start; /* alinea a la izquierda */
+  text-align: left;
+}
+
+.derecha .contenido {
+  align-items: flex-end; /* alinea a la derecha */
+  text-align: right;
+}
+/* === Footer === */
+.footer {
+  background-color: #222;
+  color: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.footer div {
+  margin: 0.5rem 1rem;
+}
+
+.footer .redes a img {
+  width: 25px;
+  margin: 0 0.5rem;
+}
+
+.footer .derechos {
+  width: 100%;
+  text-align: center;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* === Responsive === */
+@media (max-width: 900px) {
+  .contenedor {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .columna {
+    width: 100%;
+    height: auto;
+  }
+
+  .contenido h1 {
+    font-size: 2rem;
+  }
+
+  .marca-fondo img {
+    width: 50%;
+    max-width: 200px;
+  }
+
+  .footer {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 700px) {
+  .nav {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
