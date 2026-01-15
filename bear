@@ -1,1 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>LCM | Catálogo</title>
 
+  <!-- Bebas Neue -->
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- HEADER / MENÚ -->
+  <header class="header">
+    <div class="logo">
+      <img src="img/logo-izq.svg" alt="Logo Bear">
+    </div>
+
+    <nav class="nav">
+      <a href="#">INICIO</a>
+      <a href="#">CATÁLOGOS</a>
+      <a href="#">NOSOTROS</a>
+      <a href="#">GUÍA DE TALLAS</a>
+    </nav>
+
+    <div class="logo-secundario">
+      <img src="img/logo-der.svg" alt="LCM">
+    </div>
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="contenedor">
+
+    <!-- COLUMNA IZQUIERDA (INFO) -->
+    <aside class="columna izquierda">
+      <div class="contenido">
+        <h1>CATÁLOGO / LCM</h1>
+
+        <p>
+          CONTÁCTANOS<br>
+          WHATSAPP:<br>
+          <span style="color:#ff3b30;">350 621 9368</span>
+        </p>
+
+        <p>
+          INSTAGRAM<br>
+          <span style="color:#ff3b30;">@BEARJACKETS</span>
+        </p>
+      </div>
+    </aside>
+
+    <!-- COLUMNA DERECHA (CATÁLOGO) -->
+    <section class="columna derecha">
+      <div class="contenido">
+
+        <!-- LOGO CENTRAL -->
+        <div class="marca-fondo">
+          <img src="img/logo-central.svg" alt="LCM">
+        </div>
+
+        <!-- BANNER PRINCIPAL -->
+        <div class="banner-grande"></div>
+
+        <!-- INDICADORES -->
+        <div class="paginacion">
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+
+        <!-- BLOQUES ELLAS / ELLOS -->
+        <div class="doble-banner">
+          <div class="banner">
+            <div class="etiqueta">ELLAS</div>
+          </div>
+          <div class="banner">
+            <div class="etiqueta">ELLOS</div>
+          </div>
+        </div>
+
+        <!-- GRID PRODUCTOS -->
+        <div class="grid-productos">
+          <div class="producto">PRENDA UNISEX A</div>
+          <div class="producto">PRENDA UNISEX B</div>
+          <div class="producto">PRENDA UNISEX C</div>
+          <div class="producto">PRENDA UNISEX D</div>
+
+          <div class="producto">PRENDA UNISEX E</div>
+          <div class="producto">PRENDA UNISEX F</div>
+          <div class="producto">PRENDA UNISEX G</div>
+          <div class="producto">PRENDA UNISEX H</div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div>
+      TODOS LOS DERECHOS RESERVADOS<br>
+      CONTÁCTANOS POR:
+    </div>
+
+    <div class="redes">
+      <a href="#"><img src="img/ig.svg" alt="Instagram"></a>
+      <a href="#"><img src="img/ws.svg" alt="WhatsApp"></a>
+      <a href="#"><img src="img/tk.svg" alt="TikTok"></a>
+    </div>
+
+    <div class="derechos">
+      © LCM
+    </div>
+  </footer>
+
+</body>
+</html>
