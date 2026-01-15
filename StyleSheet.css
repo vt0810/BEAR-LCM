@@ -222,4 +222,43 @@ body {
   .menu-toggle {
     display: block;
   }
+
+}
+/* === Dropdown Catálogos === */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-toggle {
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #e5e5e5;
+  min-width: 160px;
+  display: none;
+  flex-direction: column;
+  padding: 0.5rem 0;
+  z-index: 2000;
+}
+
+.dropdown-menu a {
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+}
+
+.dropdown-menu a:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+/* Mostrar dropdown en desktop */
+.dropdown:hover .dropdown-menu {
+  display: flex;
 }
