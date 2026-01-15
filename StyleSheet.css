@@ -5,49 +5,114 @@
   box-sizing: border-box;
 }
 
+/* === Base === */
 body {
   font-family: 'Bebas Neue', sans-serif;
   background-color: #fff;
   color: #000;
+  overflow-x: hidden;
 }
 
-/* === Header === */
+/* =========================
+   HEADER
+========================= */
 .header {
-  width: 60%;
+  width: 85%;
+  max-width: 1400px;
   height: 80px;
   margin: 0 auto;
-  background-color: rgba(229, 229, 229, 0.8); /*color semitransparente*/
+  background-color: rgba(229, 229, 229, 0.85);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.5rem 2rem;
-  position:absolute ;
-  top: 2rem; /* separación desde arriba */
+  padding: 0 2.5rem;
+  position: fixed;
+  top: 2rem;
   left: 0;
   right: 0;
-  z-index: 1000; /*por encima del contenido */
-  backdrop-filter: blur(8px); /* efecto de desenfoque */
+  z-index: 1000;
+  backdrop-filter: blur(8px);
 }
+
+.logo img,
+.logo-secundario img {
+  height: 48px;
+}
+
+/* Navegación */
+.nav {
+  display: flex;
+  align-items: center;
+}
+
 .nav a {
   margin: 0 1.5rem;
   text-decoration: none;
   color: #000;
   font-weight: 600;
+  letter-spacing: 0.15em;
 }
 
-/* Botón hamburguesa */
-.menu-toggle {
-  display: none;
-  font-size: 4rem;
+/* =========================
+   DROPDOWN CATÁLOGOS
+========================= */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
   cursor: pointer;
 }
 
-/* Menú móvil */
+.dropdown-menu {
+  position: absolute;
+  top: 120%;
+  left: 0;
+  background-color: #e5e5e5;
+  min-width: 180px;
+  display: none;
+  flex-direction: column;
+  padding: 0.5rem 0;
+  z-index: 2000;
+}
+
+.dropdown-menu a {
+  padding: 0.6rem 1.2rem;
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+}
+
+.dropdown-menu a:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: flex;
+}
+
+/* =========================
+   MENÚ MÓVIL
+========================= */
+.menu-toggle {
+  display: none;
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
 .menu-movil {
   display: none;
   flex-direction: column;
   background-color: #e5e5e5;
   text-align: center;
+  position: fixed;
+  top: 110px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  z-index: 999;
 }
 
 .menu-movil a {
@@ -55,31 +120,48 @@ body {
   text-decoration: none;
   color: #000;
   border-bottom: 1px solid #ccc;
+  letter-spacing: 0.15em;
 }
 
 .menu-movil.activo {
   display: flex;
 }
 
-/* === Contenedor principal === */
+/* Dropdown móvil */
+.dropdown-movil-menu {
+  display: none;
+  flex-direction: column;
+  background-color: #ddd;
+}
+
+.dropdown-movil-menu a {
+  padding: 0.8rem;
+}
+
+.dropdown-movil-menu.activo {
+  display: flex;
+}
+
+/* =========================
+   CONTENEDOR PRINCIPAL
+========================= */
 .contenedor {
   display: flex;
-  flex-direction: row;
   width: 100%;
-  min-height: 100vh;
-  height: auto;
+  min-height: 110vh;
+  padding-top: 140px; /* espacio para header flotante */
 }
 
 /* Columnas */
 .columna {
   flex: 1;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
-  text-align: center;
-  padding: 2rem;
+  padding: 4rem;
 }
 
+/* Lados */
 .izquierda {
   background-color: #000;
   color: #fff;
@@ -90,18 +172,19 @@ body {
   color: #000;
 }
 
-/* Contenido */
+/* =========================
+   CONTENIDO HERO
+========================= */
 .contenido {
   display: flex;
   flex-direction: column;
-  align-items: center;
   z-index: 2;
 }
 
 .contenido h1 {
-  font-size: 2.5rem;
+  font-size: clamp(3.5rem, 5vw, 6rem);
+  line-height: 0.95;
   font-weight: 800;
-  line-height: 1.1;
 }
 
 .contenido span {
@@ -109,17 +192,33 @@ body {
 }
 
 .contenido p {
-  margin: 1rem 0;
-  font-weight: 500;
+  margin: 1.5rem 0;
+  font-size: 1.2rem;
+  letter-spacing: 0.12em;
 }
 
-/* Botones */
+/* Alineación por lado */
+.izquierda .contenido {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.derecha .contenido {
+  align-items: flex-end;
+  text-align: right;
+}
+
+/* =========================
+   BOTONES
+========================= */
 .btn {
   display: inline-block;
-  padding: 0.7rem 1.5rem;
-  border-radius: 25px;
+  padding: 1rem 2.5rem;
+  border-radius: 30px;
   text-decoration: none;
   font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.15em;
   transition: all 0.3s ease;
 }
 
@@ -131,43 +230,36 @@ body {
 .btn.oscuro {
   background-color: #000;
   color: #fff;
+  border: 1px solid #000;
 }
 
 .btn:hover {
-  transform: scale(1.05);
+  transform: scale(1.06);
 }
 
-/* Logo debajo del texto */
+/* =========================
+   LOGOS DE FONDO
+========================= */
 .marca-fondo {
-  margin-top: 2rem;
+  margin-top: 3rem;
 }
 
 .marca-fondo img {
-  width: 60%;
-  max-width: 50%;
-  opacity: 0.9;
-  display: block;
-  margin: 0 auto;
-}
-/* Alineación específica para cada lado */
-.izquierda .contenido {
-  align-items: flex-start; /* alinea a la izquierda */
-  text-align: left;
+  width: 55%;
+  max-width: 260px;
+  opacity: 0.85;
 }
 
-.derecha .contenido {
-  align-items: flex-end; /* alinea a la derecha */
-  text-align: right;
-}
-/* === Footer === */
+/* =========================
+   FOOTER
+========================= */
 .footer {
   background-color: #222;
   color: #fff;
-  padding: 1rem 2rem;
+  padding: 2rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
   text-align: center;
 }
 
@@ -175,42 +267,48 @@ body {
   margin: 0.5rem 1rem;
 }
 
-.footer .redes a img {
-  width: 25px;
-  margin: 0 0.5rem;
+.footer .redes img {
+  width: 24px;
+  margin: 0 0.4rem;
 }
 
 .footer .derechos {
   width: 100%;
-  text-align: center;
-  margin-top: 0.5rem;
-  font-size: 0.9rem;
+  margin-top: 1rem;
+  font-size: 0.85rem;
   opacity: 0.8;
 }
 
-/* === Responsive === */
+/* =========================
+   RESPONSIVE
+========================= */
 @media (max-width: 900px) {
   .contenedor {
     flex-direction: column;
-    height: auto;
+    min-height: auto;
   }
 
   .columna {
-    width: 100%;
-    height: auto;
+    align-items: center;
+    padding: 4rem 2rem;
+  }
+
+  .contenido {
+    align-items: center !important;
+    text-align: center !important;
   }
 
   .contenido h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 
-  .marca-fondo img {
-    width: 50%;
-    max-width: 200px;
+  .contenido p {
+    font-size: 1rem;
   }
 
-  .footer {
-    flex-direction: column;
+  .header {
+    width: 90%;
+    height: 70px;
   }
 }
 
@@ -223,42 +321,10 @@ body {
     display: block;
   }
 
-}
-/* === Dropdown Catálogos === */
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-toggle {
-  cursor: pointer;
+  .marca-fondo img {
+    width: 60%;
+    max-width: 180px;
+  }
 }
 
-.dropdown-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #e5e5e5;
-  min-width: 160px;
-  display: none;
-  flex-direction: column;
-  padding: 0.5rem 0;
-  z-index: 2000;
-}
 
-.dropdown-menu a {
-  padding: 0.5rem 1rem;
-  text-decoration: none;
-  color: #000;
-  font-weight: 500;
-}
-
-.dropdown-menu a:hover {
-  background-color: #000;
-  color: #fff;
-}
-
-/* Mostrar dropdown en desktop */
-.dropdown:hover .dropdown-menu {
-  display: flex;
-}
