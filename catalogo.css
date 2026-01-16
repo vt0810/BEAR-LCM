@@ -244,3 +244,30 @@ body {
     height: 200px;
   }
 }
+.banner-link {
+  flex: 1;
+  text-decoration: none;
+}
+
+.banner-link .banner {
+  height: 280px;
+  background-color: #dcdcdc;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.banner-link:hover .banner {
+  transform: scale(1.02);
+}
+
+.etiqueta {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #000;
+  color: #ff3b30;
+  text-align: center;
+  padding: 1rem 0;
+  letter-spacing: 0.3em;
+}
+
