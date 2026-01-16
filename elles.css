@@ -1,0 +1,96 @@
+/* =====================
+   RESET
+===================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =====================
+   BASE
+===================== */
+body {
+  font-family: 'Bebas Neue', sans-serif;
+  background-color: #fff;
+  color: #000;
+}
+
+/* =====================
+   HEADER
+===================== */
+.header {
+  width: 90%;
+  max-width: 1400px;
+  height: 80px;
+  margin: 0 auto;
+  background-color: #e5e5e5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2.5rem;
+  position: fixed;
+  top: 2rem;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.logo img,
+.logo-secundario img {
+  height: 45px;
+}
+
+.nav a {
+  margin: 0 1.5rem;
+  text-decoration: none;
+  color: #000;
+  letter-spacing: 0.15em;
+}
+
+/* =====================
+   CONTENEDOR
+===================== */
+.contenedor {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 3rem;
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-top: 160px;
+  padding-bottom: 4rem;
+}
+
+/* =====================
+   COLUMNA IZQUIERDA
+===================== */
+.columna-izquierda {
+  position: sticky;
+  top: 160px;
+}
+
+.columna-izquierda h1 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.columna-izquierda p {
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  margin-bottom: 1.5rem;
+}
+
+/* =====================
+   COLUMNA DERECHA
+===================== */
+.columna-derecha {
+  width: 100%;
+}
+
+/* =====================
+   TITULO
+===================== */
+.titulo-catalogo {
+  font-size: 2.2rem;
+  letter-sp
