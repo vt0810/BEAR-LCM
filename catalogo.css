@@ -1,0 +1,246 @@
+/* =====================
+   RESET
+===================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =====================
+   BASE
+===================== */
+body {
+  font-family: 'Bebas Neue', sans-serif;
+  background-color: #fff;
+  color: #000;
+  overflow-x: hidden;
+}
+
+/* =====================
+   HEADER
+===================== */
+.header {
+  width: 90%;
+  max-width: 1400px;
+  height: 80px;
+  margin: 0 auto;
+  background-color: #e5e5e5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2.5rem;
+  position: fixed;
+  top: 2rem;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.logo img,
+.logo-secundario img {
+  height: 45px;
+}
+
+.nav a {
+  margin: 0 1.5rem;
+  text-decoration: none;
+  color: #000;
+  letter-spacing: 0.15em;
+}
+
+/* =====================
+   CONTENEDOR PRINCIPAL
+===================== */
+.contenedor {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 3rem;
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-top: 160px;
+  padding-bottom: 4rem;
+}
+
+/* =====================
+   COLUMNA IZQUIERDA
+===================== */
+.columna.izquierda {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.columna.izquierda .contenido {
+  position: sticky;
+  top: 180px;
+}
+
+.columna.izquierda h1 {
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+}
+
+.columna.izquierda p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  letter-spacing: 0.12em;
+}
+
+/* =====================
+   COLUMNA DERECHA
+===================== */
+.columna.derecha {
+  display: flex;
+  justify-content: center;
+}
+
+.columna.derecha .contenido {
+  width: 100%;
+}
+
+/* =====================
+   LOGO CENTRAL
+===================== */
+.marca-fondo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.marca-fondo img {
+  width: 140px;
+}
+
+/* =====================
+   BANNER PRINCIPAL
+===================== */
+.banner-grande {
+  width: 100%;
+  height: 260px;
+  background-color: #e0e0e0;
+  margin-bottom: 1rem;
+}
+
+/* =====================
+   PAGINACIÓN
+===================== */
+.paginacion {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 3rem;
+}
+
+.paginacion span {
+  width: 10px;
+  height: 10px;
+  background-color: #ff3b30;
+  border-radius: 50%;
+}
+
+/* =====================
+   DOBLE BANNER
+===================== */
+.doble-banner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.banner {
+  height: 240px;
+  background-color: #e0e0e0;
+  position: relative;
+}
+
+.etiqueta {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #000;
+  color: #ff3b30;
+  text-align: center;
+  padding: 0.7rem 0;
+  letter-spacing: 0.15em;
+}
+
+/* =====================
+   GRID PRODUCTOS
+===================== */
+.grid-productos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.producto {
+  height: 180px;
+  background-color: #e0e0e0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 0.5rem;
+  letter-spacing: 0.1em;
+  font-size: 0.85rem;
+}
+
+/* =====================
+   FOOTER
+===================== */
+.footer {
+  background-color: #222;
+  color: #fff;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer .redes img {
+  width: 24px;
+  margin: 0 0.4rem;
+}
+
+.footer .derechos {
+  width: 100%;
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.8rem;
+}
+
+/* =====================
+   RESPONSIVE
+===================== */
+@media (max-width: 1000px) {
+  .contenedor {
+    grid-template-columns: 1fr;
+  }
+
+  .columna.izquierda .contenido {
+    position: relative;
+    top: 0;
+  }
+
+  .grid-productos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .doble-banner {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-productos {
+    grid-template-columns: 1fr;
+  }
+
+  .banner-grande {
+    height: 200px;
+  }
+}
