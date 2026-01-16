@@ -17,20 +17,30 @@
 <body>
 
   <!-- HEADER / MENÚ -->
-  <header class="header">
+ <header class="header">
     <div class="logo">
-      <img src="img/logo-izq.svg" alt="Logo Bear">
+      <img src="img/logo-bear.png" alt="Bear Jackets">
     </div>
 
     <nav class="nav">
       <a href="index.html">INICIO</a>
-      <a href="#">CATÁLOGOS</a>
+      <div class="dropdown">
+  <a href="#" class="dropdown-toggle">CATÁLOGOS</a>
+  <div class="dropdown-menu">
+    <a href="catalogo-bear.html">BEAR</a>
+    <a href="catalogo-lcm.html">LCM</a>
+  </div>
+</div>
       <a href="#">NOSOTROS</a>
-      <a href="#">GUÍA DE TALLAS</a>
     </nav>
 
     <div class="logo-secundario">
-      <img src="img/logo-der.svg" alt="LCM">
+      <img src="img/logo-lcm.png" alt="LCM Dotaciones">
+    </div>
+
+    <!-- Botón hamburguesa -->
+    <div class="menu-toggle" id="menu-toggle">
+      ☰
     </div>
   </header>
 
