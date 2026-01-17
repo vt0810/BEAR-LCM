@@ -36,61 +36,83 @@ body {
   z-index: 1000;
 }
 
-.logo img,
-.logo-secundario img {
-  height: 45px;
-}
-
-.nav a {
-  margin: 0 1.5rem;
-  text-decoration: none;
-  color: #000;
-  letter-spacing: 0.15em;
-}
-
 /* =====================
-   CONTENEDOR
+   CONTENEDOR PRINCIPAL
 ===================== */
 .contenedor {
-  display: grid;
-  grid-template-columns: 260px 1fr;
-  gap: 3rem;
   width: 90%;
   max-width: 1400px;
   margin: 0 auto;
   padding-top: 160px;
-  padding-bottom: 4rem;
 }
 
 /* =====================
-   COLUMNA IZQUIERDA
+   VOLVER
 ===================== */
-.columna-izquierda {
-  position: sticky;
-  top: 160px;
-}
-
-.columna-izquierda h1 {
-  font-size: 1.5rem;
+.volver {
+  display: inline-block;
   margin-bottom: 2rem;
-}
-
-.columna-izquierda p {
-  font-size: 0.85rem;
-  letter-spacing: 0.12em;
-  margin-bottom: 1.5rem;
+  color: #6a00ff;
+  text-decoration: none;
+  letter-spacing: 0.15em;
 }
 
 /* =====================
-   COLUMNA DERECHA
-===================== */
-.columna-derecha {
-  width: 100%;
-}
-
-/* ====================
    TITULO
 ===================== */
 .titulo-catalogo {
-  font-size: 2.2rem;
-  letter-sp
+  font-size: 2.5rem;
+  letter-spacing: 0.25em;
+  margin-bottom: 2rem;
+}
+
+/* =====================
+   GRID PRODUCTOS
+===================== */
+.grid-productos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.producto {
+  background-color: #e0e0e0;
+  height: 260px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 1rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+}
+
+/* =====================
+   FOOTER
+===================== */
+.footer {
+  margin-top: 4rem;
+  padding: 2rem;
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+/* =====================
+   RESPONSIVE
+===================== */
+@media (max-width: 1000px) {
+  .grid-productos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .grid-productos {
+    grid-template-columns: 1fr;
+  }
+
+  .titulo-catalogo {
+    font-size: 2rem;
+  }
+}
