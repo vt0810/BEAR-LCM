@@ -25,7 +25,15 @@ body {
   padding: 0 5%; /* Margen interno para el logo */
   position: relative; /* Cambia a fixed si quieres que te siga al bajar */
 }
-
+.header .logo {
+  /* Estas líneas son las que hacen la magia de alineación */
+  width: 100%;
+  max-width: 1400px; /* Misma que el contenedor */
+  margin: 0 auto;    /* Centra el bloque del logo */
+  padding: 0 5%;     /* Mismo padding que el contenedor */
+  display: flex;
+  justify-content: flex-start; /* Empuja el contenido del logo a la izquierda */
+}
 .header .logo img {
   height: 45px;
   width: auto;
