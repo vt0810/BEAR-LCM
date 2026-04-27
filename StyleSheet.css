@@ -242,12 +242,16 @@ body {
 ========================= */
 .marca-fondo {
   margin-top: 3rem;
+  /* Añadimos flex aquí para asegurar el centrado si el padre cambia */
+  display: flex;
+  justify-content: center;
 }
 
 .marca-fondo img {
-  width: 55%;
-  max-width: 260px;
+  width: 85%;       /* Aumentado de 55% a 85% */
+  max-width: 400px; /* Aumentado de 260px a 400px */
   opacity: 0.85;
+  height: auto;     /* Asegura que mantenga la proporción */
 }
 
 /* =========================
