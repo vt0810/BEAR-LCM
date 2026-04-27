@@ -237,21 +237,30 @@ body {
   transform: scale(1.06);
 }
 
-/* =========================
-   LOGOS DE FONDO
-========================= */
+/* === catalogo.css === */
+
+/* Buscamos la clase .marca-fondo y la actualizamos así: */
 .marca-fondo {
-  margin-top: 3rem;
-  /* Añadimos flex aquí para asegurar el centrado si el padre cambia */
-  display: flex;
-  justify-content: center;
+  margin-top: 1rem;      /* Reducimos un poco el margen superior */
+  width: 100%;           /* Forzamos a que ocupe todo el ancho disponible */
+  display: flex;         /* Usamos flex para control de posición */
+  justify-content: center; /* Centramos el logo horizontalmente */
+  padding: 1rem 0;       /* Espaciado interno */
 }
 
+/* Forzamos el tamaño de la imagen */
 .marca-fondo img {
-  width: 85%;       /* Aumentado de 55% a 85% */
-  max-width: 400px; /* Aumentado de 260px a 400px */
-  opacity: 0.85;
-  height: auto;     /* Asegura que mantenga la proporción */
+  width: 100% !important;   /* Que intente ocupar el ancho del contenedor */
+  max-width: 600px !important; /* Aumentamos drásticamente el límite (estaba en 260px) */
+  height: auto;             /* Mantiene la proporción */
+  opacity: 1;               /* Le damos total opacidad para que destaque más */
+}
+
+/* Ajuste opcional para la columna si sientes que el logo sigue apretado */
+@media (min-width: 901px) {
+  .derecha {
+    padding: 4rem 2rem; /* Reducimos el padding lateral de 4rem a 2rem para ganar espacio */
+  }
 }
 
 /* =========================
