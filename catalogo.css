@@ -111,7 +111,7 @@ body {
 
 .marca-fondo img {
   width: 100%;
-  max-width: 500px; /* Aquí es donde ajustas el tamaño que querías */
+  max-width: 300px; /* Aquí es donde ajustas el tamaño que querías */
   height: auto;
 }
 
