@@ -19,23 +19,20 @@ body {
 /* =====================
    HEADER
 ===================== */
+/* HEADER - Aquí corregimos el logo gigante */
 .header {
-  width: 90%;
-  max-width: 1400px;
+  width: 100%;
   height: 80px;
-  margin: 0 auto;
-  background-color: #e5e5e5;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0 2.5rem;
-  position: fixed;
-  top: 2rem;
-  left: 0;
-  right: 0;
-  z-index: 1000;
+  padding: 0 5%;
+  background-color: #f4f4f4; /* Un gris claro para el fondo del header */
 }
 
+.header .logo img {
+  height: 50px; /* Tamaño controlado del logo */
+  width: auto;  /* Mantiene la proporción */
+}
 /* =====================
    CONTENEDOR PRINCIPAL
 ===================== */
