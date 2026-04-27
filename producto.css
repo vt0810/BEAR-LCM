@@ -50,10 +50,20 @@ body {
 /* Imagen */
 .imagen-producto {
   width: 100%;
-  height: 420px;
+  height: 600px;      /* Aumenté un poco la altura para que luzca la camisa */
   background-color: #e0e0e0;
+  display: flex;      /* Para centrar la imagen si es más pequeña */
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;   /* Evita que nada salga del cuadro */
 }
 
+/* LA REGLA QUE FALTA: Controlar la imagen real */
+.imagen-producto img {
+  width: 100%;        /* Se ajusta al ancho del contenedor */
+  height: 100%;       /* Se ajusta al alto del contenedor */
+  object-fit: contain; /* CRUCIAL: Mantiene la proporción de la camisa sin estirarla ni cortarla */
+}
 /* Info producto */
 .info-producto {
   display: flex;
