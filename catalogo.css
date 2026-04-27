@@ -168,12 +168,13 @@ body {
 }
 
 /* Clases específicas para tus imágenes de fondo */
-.banner.dotaciones-bg {
-  background-image: url('img/CAMISA OXFORD GRIS.png'); /* Cambia por tu archivo */
+.banner.ellas-bg {
+  background-image: url('img/CAMISA OXFORD GRIS.png'); /* Nombre real de tu archivo */
 }
 
-.banner.chaquetas-bg {
-  background-image: url('img/ROMPEVIENTOS.png'); /* Cambia por tu archivo */
+.banner.ellos-bg {
+  background-image: url('img/ROMPEVIENTOS.png'); /* Nombre real de tu archivo */
+}
 }
 
 .etiqueta {
