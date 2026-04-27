@@ -110,7 +110,9 @@ body {
 }
 
 .marca-fondo img {
-  width: 300px;
+  width: 100%;
+  max-width: 500px; /* Aquí es donde ajustas el tamaño que querías */
+  height: auto;
 }
 
 /* =====================
@@ -156,34 +158,42 @@ body {
 }
 
 .banner {
-  height: 200px; /* Aumenté un poco la altura para que luzca la imagen */
+  height: 280px; /* Altura unificada */
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #eee;
   background-size: cover;
   background-position: center;
-  transition: opacity 0.3s ease;
-  border: 1px solid #ddd;
+  background-repeat: no-repeat;
+  position: relative;
+  transition: transform 0.3s ease;
+  overflow: hidden;
 }
 
-/* Clases específicas para tus imágenes de fondo */
+.banner-link:hover .banner {
+  transform: scale(1.02);
+}
+
+/* Imágenes de fondo - Asegúrate de que las rutas sean correctas */
 .banner.ellas-bg {
-  background-image: url('img/CAMISA OXFORD GRIS.png'); /* Nombre real de tu archivo */
+  background-image: url('img/CAMISA OXFORD GRIS.png'); 
 }
 
 .banner.ellos-bg {
-  background-image: url('img/ROMPEVIENTOS.png'); /* Nombre real de tu archivo */
-}
+  background-image: url('img/ROMPEVIENTOS.png'); 
 }
 
 .etiqueta {
-  background-color: rgba(255, 255, 255, 0.9);
-  color: #000;
-  padding: 0.5rem 1.5rem;
-  font-size: 1.2rem;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #000;
+  color: #ff3b30; /* Rojo según tu estilo */
+  text-align: center;
+  padding: 1rem 0;
+  letter-spacing: 0.3em;
   font-weight: bold;
-  letter-spacing: 0.1em;
 }
 
 /* =====================
