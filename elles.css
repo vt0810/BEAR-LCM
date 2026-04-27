@@ -34,10 +34,18 @@ body {
    CONTENEDOR PRINCIPAL
 ===================== */
 .contenedor.seccion-productos {
-  padding-top: 10px !important; /* Casi pegado al header */
-  margin-top: 0 !important;
+  /* Mantenemos el espacio superior corto que logramos */
+  padding-top: 20px !important; 
+  
+  /* Aumentamos el "aire" a los lados (izquierda y derecha) */
+  padding-left: 10% !important; 
+  padding-right: 10% !important;
+  
+  /* Aseguramos que el contenido no se estire infinito en pantallas grandes */
+  max-width: 1400px;
+  margin: 0 auto !important;
+  
 }
-
 /* =====================
    VOLVER
 ===================== */
@@ -46,6 +54,7 @@ body {
   margin-top: 0 !important;
   margin-bottom: 5px !important;
   padding-top: 0 !important;
+  margin-right: 100px
 }
 
 /* =====================
@@ -55,14 +64,16 @@ body {
   margin-top: 0 !important;    /* Eliminamos espacio arriba del texto */
   margin-bottom: 20px !important; /* Espacio corto antes de los cuadros */
   line-height: 1 !important;
+margin-right: 100px
 }
 /* =====================
    GRID PRODUCTOS
 ===================== */
 .grid-productos {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
+display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px; /* Espacio entre los cuadros grises */
+  width: 100%;
 }
 
 .producto {
