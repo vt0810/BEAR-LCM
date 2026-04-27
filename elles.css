@@ -1,15 +1,11 @@
-/* =====================
-   RESET
-===================== */
+/* === elles.css (Versión Estabilizada) === */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* =====================
-   BASE
-===================== */
 body {
   font-family: 'Bebas Neue', sans-serif;
   background-color: #fff;
@@ -17,103 +13,103 @@ body {
 }
 
 /* =====================
-   HEADER
+   HEADER (Consistente con catálogo)
 ===================== */
-/* HEADER - Aquí corregimos el logo gigante */
 .header {
-  height: 70px !important; /* Reducimos la altura de la barra gris */
-  margin-bottom: 0 !important;
+  width: 100%;
+  height: 80px;
+  background-color: #e5e5e5; /* El gris de tu otra página */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 5%; /* Margen interno para el logo */
+  position: relative; /* Cambia a fixed si quieres que te siga al bajar */
 }
 
 .header .logo img {
-  height: 50px; /* Tamaño controlado del logo */
-  width: auto;  /* Mantiene la proporción */
-  align: center;
+  height: 45px;
+  width: auto;
 }
+
 /* =====================
    CONTENEDOR PRINCIPAL
 ===================== */
 .contenedor.seccion-productos {
-  /* Mantenemos el espacio superior corto que logramos */
-  padding-top: 20px !important; 
-  
-  /* Aumentamos el "aire" a los lados (izquierda y derecha) */
-  padding-left: 10% !important; 
-  padding-right: 10% !important;
-  
-  /* Aseguramos que el contenido no se estire infinito en pantallas grandes */
+  width: 100%;
   max-width: 1400px;
-  margin: 0 auto !important;
+  margin: 0 auto; /* Centra todo el bloque */
   
-}
-/* =====================
-   VOLVER
-===================== */
-.volver {
-  display: inline-block;
-  margin-top: 0 !important;
-  margin-bottom: 5px !important;
-  padding-top: 0 !important;
-  margin-right: 100px
+  /* Aire a los lados */
+  padding-left: 5% !important; 
+  padding-right: 5% !important;
+  
+  /* Aire arriba (reducido como querías) */
+  padding-top: 40px !important; 
+  padding-bottom: 4rem;
 }
 
 /* =====================
-   TITULO
+   ELEMENTOS DE TEXTO
 ===================== */
-.titulo-catalogo {
-  margin-top: 0 !important;    /* Eliminamos espacio arriba del texto */
-  margin-bottom: 20px !important; /* Espacio corto antes de los cuadros */
-  line-height: 1 !important;
-margin-right: 100px
+.volver {
+  display: inline-block;
+  text-decoration: none;
+  color: #6300ff;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  /* Eliminamos el margin-right que descuadraba */
 }
+
+.titulo-catalogo {
+  font-size: 3.5rem;
+  line-height: 1;
+  margin-bottom: 30px;
+  /* Eliminamos el margin-right que descuadraba */
+}
+
 /* =====================
    GRID PRODUCTOS
 ===================== */
 .grid-productos {
-display: grid;
+  display: grid;
+  /* El repeat auto-fill es lo mejor para que respete los márgenes */
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 30px; /* Espacio entre los cuadros grises */
+  gap: 25px;
   width: 100%;
 }
 
 .producto {
   background-color: #e0e0e0;
-  height: 260px;
+  aspect-ratio: 1 / 1; /* Cuadros perfectos */
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  padding-bottom: 1rem;
-  font-size: 0.9rem;
+  padding-bottom: 1.5rem;
+  font-size: 1rem;
   letter-spacing: 0.1em;
+  text-align: center;
 }
 
 /* =====================
    FOOTER
 ===================== */
 .footer {
-  margin-top: 4rem;
-  padding: 2rem;
+  padding: 3rem;
   background-color: #222;
   color: #fff;
   text-align: center;
-  font-size: 0.8rem;
 }
 
 /* =====================
    RESPONSIVE
 ===================== */
-@media (max-width: 1000px) {
-  .grid-productos {
-    grid-template-columns: repeat(2, 1fr);
+@media (max-width: 700px) {
+  .contenedor.seccion-productos {
+    padding-left: 8% !important;
+    padding-right: 8% !important;
   }
-}
-
-@media (max-width: 600px) {
-  .grid-productos {
-    grid-template-columns: 1fr;
-  }
-
+  
   .titulo-catalogo {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 }
