@@ -99,7 +99,8 @@ body {
   background-size: cover;      /* La imagen cubre todo el cuadro */
   background-position: center; /* Centra la foto */
   background-repeat: no-repeat;
-  color: #000;                 /* Color del texto */
+  color: #ffffff; /* Color del texto */
+  text-decoration: none;
   text-shadow: 0px 0px 5px rgba(255,255,255,0.8); /* Sombra blanca para que el texto se lea sobre la foto */
   cursor: pointer;
 }
