@@ -177,11 +177,11 @@ body {
 
 /* Imágenes de fondo - Asegúrate de que las rutas sean correctas */
 .banner.ellas-bg {
-  background-image: url('img/CAMISA OXFORD GRIS.png'); 
+  background-image: url('img/PresentacionDotaciones.jpeg'); 
 }
 
 .banner.ellos-bg {
-  background-image: url('img/ROMPEVIENTOS.png'); 
+  background-image: url('img/PresentacionChaquetasChalecos.jpeg'); 
 }
 
 .etiqueta {
