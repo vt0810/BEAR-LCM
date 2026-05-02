@@ -177,11 +177,11 @@ body {
 
 /* Imágenes de fondo - Asegúrate de que las rutas sean correctas */
 .banner.ellas-bg {
-  background-image: url('img/PresentacionDotaciones.jpeg'); 
+  background-image: url('img/PresentacionDotaciones.jpg'); 
 }
 
 .banner.ellos-bg {
-  background-image: url('img/PresentacionChaquetasChalecos.jpeg'); 
+  background-image: url('img/PresentacionChaquetasChalecos.jpg'); 
 }
 
 .etiqueta {
