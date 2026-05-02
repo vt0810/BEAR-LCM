@@ -164,7 +164,7 @@ body {
   justify-content: center;
   background-color: #eee;
   background-size: cover;
-  background-position: center;
+  background-position: top;
   background-repeat: no-repeat;
   position: relative;
   transition: transform 0.3s ease;
