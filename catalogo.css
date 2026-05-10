@@ -1,5 +1,5 @@
 /* =====================
-   1. RESET Y BASE (Para todos)
+   1. RESET Y BASE
 ===================== */
 * {
   margin: 0;
@@ -15,7 +15,7 @@ body {
 }
 
 /* =====================
-   2. PC / ESCRITORIO (Diseño Base)
+   2. HEADER Y MENÚ (PC)
 ===================== */
 .header {
   width: 90%;
@@ -46,6 +46,9 @@ body {
 
 .menu-hamburguesa { display: none; } /* Oculto en PC */
 
+/* =====================
+   3. ESTRUCTURA PRINCIPAL (PC)
+===================== */
 .contenedor {
   display: grid;
   grid-template-columns: 300px 1fr; /* Dos columnas en PC */
@@ -54,34 +57,51 @@ body {
   max-width: 1400px;
   margin: 0 auto;
   padding-top: 160px;
+  padding-bottom: 4rem;
 }
 
+/* Columna Izquierda (Info) */
+.columna.izquierda { display: flex; justify-content: flex-start; }
 .columna.izquierda .contenido { position: sticky; top: 180px; }
+.columna.izquierda h1 { font-size: 1.6rem; margin-bottom: 2rem; }
+.columna.izquierda p { font-size: 0.9rem; line-height: 1.6; margin-bottom: 2rem; letter-spacing: 0.12em; }
 
-.grid-productos {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 cuadros en PC */
-  gap: 1.5rem;
-}
+/* Columna Derecha (Catálogo) */
+.columna.derecha { display: flex; justify-content: center; }
+.columna.derecha .contenido { width: 100%; }
 
-.doble-banner {
-  display: flex; /* Lado a lado en PC */
-  gap: 15px;
-  margin: 2rem 0;
-}
+/* =====================
+   4. ELEMENTOS DEL CATÁLOGO
+===================== */
+.marca-fondo { display: flex; justify-content: center; margin-bottom: 2rem; }
+.marca-fondo img { width: 100%; max-width: 300px; height: auto; }
 
+.banner-grande { width: 100%; height: 260px; background-color: #e0e0e0; margin-bottom: 1rem; }
+
+.paginacion { display: flex; justify-content: center; gap: 0.5rem; margin-bottom: 3rem; }
+.paginacion span { width: 10px; height: 10px; background-color: #ff3b30; border-radius: 50%; }
+
+/* =====================
+   5. DOBLE BANNER
+===================== */
+.doble-banner { display: flex; gap: 15px; width: 100%; margin: 2rem 0; }
 .banner-link { flex: 1; text-decoration: none; }
-
 .banner {
   height: 280px;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #eee;
   background-size: cover;
   background-position: top;
   position: relative;
+  transition: transform 0.3s ease;
   overflow: hidden;
 }
+.banner-link:hover .banner { transform: scale(1.02); }
+
+.banner.ellas-bg { background-image: url('img/PresentacionDotaciones.jpg'); }
+.banner.ellos-bg { background-image: url('img/PresentacionChaquetasChalecos.jpg'); }
 
 .etiqueta {
   position: absolute;
@@ -91,71 +111,81 @@ body {
   color: #ff3b30;
   text-align: center;
   padding: 1rem 0;
+  letter-spacing: 0.3em;
   font-weight: bold;
 }
 
 /* =====================
-   3. MÓVIL (Solo se activa en pantallas pequeñas)
+   6. GRID DE PRODUCTOS
 ===================== */
-@media (max-width: 768px) {
-  .header {
-    width: 100%;
-    top: 0;
-    padding: 0 1.5rem;
-    height: 60px;
-  }
-
-  .menu-hamburguesa { 
-    display: flex; 
-    flex-direction: column;
-    gap: 5px;
-    z-index: 2001; 
-  }
-  .menu-hamburguesa span { width: 30px; height: 3px; background: #000; }
-
-  .nav {
-    position: fixed;
-    top: 0;
-    right: -100%; /* Escondido */
-    width: 75%;
-    height: 100vh;
-    background-color: #e5e5e5;
-    flex-direction: column;
-    justify-content: center;
-    transition: 0.5s;
-    z-index: 2000;
-  }
-
-  .nav.active { right: 0; } /* Se activa con el JS */
-
-  .nav a { margin: 1.5rem 0; font-size: 1.5rem; }
-
-  .contenedor {
-    display: block; /* Una sola columna en móvil */
-    padding-top: 100px;
-  }
-
-  .columna.izquierda .contenido { position: static; margin-bottom: 2rem; }
-
-  .grid-productos {
-    grid-template-columns: repeat(2, 1fr); /* 2 cuadros en móvil */
-    gap: 10px;
-  }
-
-  .doble-banner {
-    flex-direction: column; /* Uno encima de otro */
-  }
-
-  .banner { height: 250px; }
+.grid-productos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 en PC */
+  gap: 1.5rem;
 }
 
+.producto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #e0e0e0; /* Recuperamos el cuadro gris */
+  height: 220px;             /* Altura del producto */
+  text-align: center;
+  padding: 1rem;
+}
+.producto:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
+
 /* =====================
-   4. FOOTER (Para todos)
+   7. FOOTER
 ===================== */
 .footer {
   background-color: #222;
   color: #fff;
   padding: 2rem;
-  text-align: center;
-  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.footer .redes img { width: 24px; margin: 0 0.4rem; }
+.footer .derechos { width: 100%; text-align: center; margin-top: 1rem; font-size: 0.8rem; }
+
+/* =====================
+   8. RESPONSIVE (MÓVIL)
+===================== */
+@media (max-width: 768px) {
+  /* Header y Menú Hamburguesa */
+  .header { width: 100%; top: 0; padding: 0 1.5rem; height: 60px; }
+  .menu-hamburguesa { display: flex; flex-direction: column; gap: 5px; z-index: 2001; }
+  .menu-hamburguesa span { width: 30px; height: 3px; background: #000; }
+  
+  .nav {
+    position: fixed; top: 0; right: -100%; width: 75%; height: 100vh;
+    background-color: #e5e5e5; flex-direction: column; justify-content: center;
+    transition: 0.5s; z-index: 2000;
+  }
+  .nav.active { right: 0; }
+  .nav a { margin: 1.5rem 0; font-size: 1.5rem; }
+
+  /* Contenedor pasa de Grid a Block (Todo hacia abajo) */
+  .contenedor { display: block; padding-top: 100px; width: 100%; padding-left: 5%; padding-right: 5%; }
+  
+  .columna.izquierda, .columna.derecha { width: 100%; display: block; }
+  .columna.izquierda .contenido { position: static; margin-bottom: 2rem; text-align: center; }
+
+  /* Banners e Imágenes */
+  .doble-banner { flex-direction: column; }
+  .banner { height: 250px; }
+  .banner-grande { height: 180px; }
+
+  /* Productos pasan a 2 columnas */
+  .grid-productos { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  
+  /* Ajuste Footer */
+  .footer { flex-direction: column; gap: 1rem; justify-content: center; }
 }
