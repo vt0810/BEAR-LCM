@@ -199,10 +199,82 @@ body {
   }
 
   .grid-productos {
-    grid-template-columns: repeat(2, 1fr);
   }
 }
+    grid-template-columns: repeat(2, 1fr);
+/* =====================
+   RESPONSIVE (CELULARES) - Corrección Total
+===================== */
+@media (max-width: 768px) {
+  /* 1. Header pegado arriba y al 100% */
+  .header {
+    width: 100% !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    padding: 0 1.5rem;
+    height: 60px;
+  }
 
+  /* 2. El contenedor deja de ser de 2 columnas y pasa a 1 sola */
+  .contenedor {
+    display: block; /* Cambiamos grid por block para que las columnas bajen */
+    width: 100%;
+    padding-top: 100px; /* Espacio para que el header no tape el título */
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  /* 3. Las columnas ahora ocupan todo el ancho */
+  .columna.izquierda, .columna.derecha {
+    width: 100%;
+    display: block;
+  }
+
+  .columna.izquierda .contenido {
+    position: static; /* Quitamos el sticky en móvil para que no flote */
+    margin-bottom: 2rem;
+  }
+
+  /* 4. Grid de productos: 2 columnas en móvil es lo ideal */
+  .grid-productos {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px;
+  }
+
+  /* 5. Doble banner uno encima del otro */
+  .doble-banner {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .banner {
+    height: 250px; /* Reducimos altura para que no sea infinito el scroll */
+  }
+
+  /* 6. Menú Hamburguesa activado */
+  .menu-hamburguesa {
+    display: flex;
+  }
+
+  .nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    height: 100vh;
+    background-color: #e5e5e5;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    z-index: 2000;
+  }
+
+  .nav.active {
+    right: 0;
+  }
+}
 /* =====================
    FOOTER
 ===================== */
