@@ -1,5 +1,5 @@
 /* =====================
-   RESET & BASE
+   1. RESET Y BASE (Para todos)
 ===================== */
 * {
   margin: 0;
@@ -15,7 +15,7 @@ body {
 }
 
 /* =====================
-   HEADER (Ajustado para Hamburguesa)
+   2. PC / ESCRITORIO (Diseño Base)
 ===================== */
 .header {
   width: 90%;
@@ -28,114 +28,60 @@ body {
   justify-content: space-between;
   padding: 0 2.5rem;
   position: fixed;
-  top: 1rem; /* Bajado un poco menos que antes para ganar espacio */
+  top: 1rem;
   left: 0;
   right: 0;
   z-index: 1000;
 }
 
-.logo img {
-  height: 45px;
-}
+.logo img { height: 45px; }
 
-/* Navegación Desktop */
-.nav {
-  display: flex;
-  align-items: center;
-}
-
+.nav { display: flex; align-items: center; }
 .nav a {
   margin: 0 1.5rem;
   text-decoration: none;
   color: #000;
   letter-spacing: 0.15em;
-  transition: 0.3s;
 }
 
-.nav a:hover {
-  color: #ff3b30;
-}
+.menu-hamburguesa { display: none; } /* Oculto en PC */
 
-/* =====================
-   BOTÓN HAMBURGUESA
-===================== */
-.menu-hamburguesa {
-  display: none; /* Oculto en PC */
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-  z-index: 2001;
-}
-
-.menu-hamburguesa span {
-  width: 30px;
-  height: 3px;
-  background-color: #000;
-  transition: 0.3s;
-}
-
-/* Animación a X al abrir (Si usas la clase .open en JS) */
-.menu-hamburguesa.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
-.menu-hamburguesa.open span:nth-child(2) { opacity: 0; }
-.menu-hamburguesa.open span:nth-child(3) { transform: rotate(-45deg) translate(6px, -6px); }
-
-/* =====================
-   CONTENEDOR & GRIDS
-===================== */
 .contenedor {
   display: grid;
-  grid-template-columns: 300px 1fr;
+  grid-template-columns: 300px 1fr; /* Dos columnas en PC */
   gap: 3rem;
   width: 90%;
   max-width: 1400px;
   margin: 0 auto;
   padding-top: 160px;
-  padding-bottom: 4rem;
 }
 
-.columna.izquierda .contenido {
-  position: sticky;
-  top: 180px;
-}
+.columna.izquierda .contenido { position: sticky; top: 180px; }
 
 .grid-productos {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr); /* 4 cuadros en PC */
   gap: 1.5rem;
 }
 
-/* =====================
-   BANNERS
-===================== */
 .doble-banner {
-  display: flex;
+  display: flex; /* Lado a lado en PC */
   gap: 15px;
-  width: 100%;
   margin: 2rem 0;
 }
 
-.banner-link {
-  flex: 1;
-  text-decoration: none;
-}
+.banner-link { flex: 1; text-decoration: none; }
 
 .banner {
   height: 280px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #eee;
   background-size: cover;
   background-position: top;
   position: relative;
-  transition: 0.3s ease;
   overflow: hidden;
 }
-
-.banner-link:hover .banner { transform: scale(1.02); }
-
-.banner.ellas-bg { background-image: url('img/PresentacionDotaciones.jpg'); }
-.banner.ellos-bg { background-image: url('img/PresentacionChaquetasChalecos.jpg'); }
 
 .etiqueta {
   position: absolute;
@@ -145,151 +91,71 @@ body {
   color: #ff3b30;
   text-align: center;
   padding: 1rem 0;
-  letter-spacing: 0.3em;
   font-weight: bold;
 }
 
 /* =====================
-   RESPONSIVE (MÓVIL)
+   3. MÓVIL (Solo se activa en pantallas pequeñas)
 ===================== */
 @media (max-width: 768px) {
   .header {
     width: 100%;
     top: 0;
     padding: 0 1.5rem;
+    height: 60px;
   }
 
-  .menu-hamburguesa {
-    display: flex; /* Aparece en móvil */
+  .menu-hamburguesa { 
+    display: flex; 
+    flex-direction: column;
+    gap: 5px;
+    z-index: 2001; 
   }
+  .menu-hamburguesa span { width: 30px; height: 3px; background: #000; }
 
   .nav {
     position: fixed;
     top: 0;
     right: -100%; /* Escondido */
-    width: 80%;
+    width: 75%;
     height: 100vh;
     background-color: #e5e5e5;
     flex-direction: column;
     justify-content: center;
-    transition: 0.5s;
-    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
-  }
-
-  .nav.active {
-    right: 0; /* Entra el menú */
-  }
-
-  .nav a {
-    margin: 1.5rem 0;
-    font-size: 1.5rem;
-  }
-
-  .contenedor {
-    grid-template-columns: 1fr;
-    padding-top: 100px;
-  }
-
-  .doble-banner {
-    flex-direction: column;
-  }
-
-  .banner {
-    height: 320px;
-  }
-
-  .grid-productos {
-  }
-}
-    grid-template-columns: repeat(2, 1fr);
-/* =====================
-   RESPONSIVE (CELULARES) - Corrección Total
-===================== */
-@media (max-width: 768px) {
-  /* 1. Header pegado arriba y al 100% */
-  .header {
-    width: 100% !important;
-    top: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    padding: 0 1.5rem;
-    height: 60px;
-  }
-
-  /* 2. El contenedor deja de ser de 2 columnas y pasa a 1 sola */
-  .contenedor {
-    display: block; /* Cambiamos grid por block para que las columnas bajen */
-    width: 100%;
-    padding-top: 100px; /* Espacio para que el header no tape el título */
-    padding-left: 5%;
-    padding-right: 5%;
-  }
-
-  /* 3. Las columnas ahora ocupan todo el ancho */
-  .columna.izquierda, .columna.derecha {
-    width: 100%;
-    display: block;
-  }
-
-  .columna.izquierda .contenido {
-    position: static; /* Quitamos el sticky en móvil para que no flote */
-    margin-bottom: 2rem;
-  }
-
-  /* 4. Grid de productos: 2 columnas en móvil es lo ideal */
-  .grid-productos {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 10px;
-  }
-
-  /* 5. Doble banner uno encima del otro */
-  .doble-banner {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .banner {
-    height: 250px; /* Reducimos altura para que no sea infinito el scroll */
-  }
-
-  /* 6. Menú Hamburguesa activado */
-  .menu-hamburguesa {
-    display: flex;
-  }
-
-  .nav {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 80%;
-    height: 100vh;
-    background-color: #e5e5e5;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     transition: 0.5s;
     z-index: 2000;
   }
 
-  .nav.active {
-    right: 0;
+  .nav.active { right: 0; } /* Se activa con el JS */
+
+  .nav a { margin: 1.5rem 0; font-size: 1.5rem; }
+
+  .contenedor {
+    display: block; /* Una sola columna en móvil */
+    padding-top: 100px;
   }
+
+  .columna.izquierda .contenido { position: static; margin-bottom: 2rem; }
+
+  .grid-productos {
+    grid-template-columns: repeat(2, 1fr); /* 2 cuadros en móvil */
+    gap: 10px;
+  }
+
+  .doble-banner {
+    flex-direction: column; /* Uno encima de otro */
+  }
+
+  .banner { height: 250px; }
 }
+
 /* =====================
-   FOOTER
+   4. FOOTER (Para todos)
 ===================== */
 .footer {
   background-color: #222;
   color: #fff;
   padding: 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.footer .derechos {
-  width: 100%;
   text-align: center;
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
