@@ -1,5 +1,5 @@
 /* =====================
-   RESET
+   RESET & BASE
 ===================== */
 * {
   margin: 0;
@@ -7,9 +7,6 @@
   box-sizing: border-box;
 }
 
-/* =====================
-   BASE
-===================== */
 body {
   font-family: 'Bebas Neue', sans-serif;
   background-color: #fff;
@@ -18,7 +15,7 @@ body {
 }
 
 /* =====================
-   HEADER
+   HEADER (Ajustado para Hamburguesa)
 ===================== */
 .header {
   width: 90%;
@@ -31,15 +28,20 @@ body {
   justify-content: space-between;
   padding: 0 2.5rem;
   position: fixed;
-  top: 2rem;
+  top: 1rem; /* Bajado un poco menos que antes para ganar espacio */
   left: 0;
   right: 0;
   z-index: 1000;
 }
 
-.logo img,
-.logo-secundario img {
+.logo img {
   height: 45px;
+}
+
+/* Navegación Desktop */
+.nav {
+  display: flex;
+  align-items: center;
 }
 
 .nav a {
@@ -47,13 +49,22 @@ body {
   text-decoration: none;
   color: #000;
   letter-spacing: 0.15em;
+  transition: 0.3s;
 }
-/* --- Estilos del Botón Hamburguesa (Oculto por defecto) --- */
+
+.nav a:hover {
+  color: #ff3b30;
+}
+
+/* =====================
+   BOTÓN HAMBURGUESA
+===================== */
 .menu-hamburguesa {
-  display: none;
+  display: none; /* Oculto en PC */
   flex-direction: column;
   gap: 5px;
   cursor: pointer;
+  z-index: 2001;
 }
 
 .menu-hamburguesa span {
@@ -63,40 +74,13 @@ body {
   transition: 0.3s;
 }
 
-/* --- Responsive (Celulares) --- */
-@media (max-width: 768px) {
-  .menu-hamburguesa {
-    display: flex; /* Aparece en móviles */
-    z-index: 2001;
-  }
+/* Animación a X al abrir (Si usas la clase .open en JS) */
+.menu-hamburguesa.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.menu-hamburguesa.open span:nth-child(2) { opacity: 0; }
+.menu-hamburguesa.open span:nth-child(3) { transform: rotate(-45deg) translate(6px, -6px); }
 
-  .nav {
-    position: fixed;
-    top: 0;
-    right: -100%; /* Escondido a la derecha */
-    width: 70%;
-    height: 100vh;
-    background-color: #e5e5e5;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transition: 0.5s;
-    z-index: 2000;
-    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
-  }
-
-  /* Clase que activaremos con JS */
-  .nav.active {
-    right: 0; 
-  }
-
-  .nav a {
-    margin: 1.5rem 0;
-    font-size: 1.5rem;
-  }
-}
 /* =====================
-   CONTENEDOR PRINCIPAL
+   CONTENEDOR & GRIDS
 ===================== */
 .contenedor {
   display: grid;
@@ -109,87 +93,19 @@ body {
   padding-bottom: 4rem;
 }
 
-/* =====================
-   COLUMNA IZQUIERDA
-===================== */
-.columna.izquierda {
-  display: flex;
-  justify-content: flex-start;
-}
-
 .columna.izquierda .contenido {
   position: sticky;
   top: 180px;
 }
 
-.columna.izquierda h1 {
-  font-size: 1.6rem;
-  margin-bottom: 2rem;
-}
-
-.columna.izquierda p {
-  font-size: 0.9rem;
-  line-height: 1.6;
-  margin-bottom: 2rem;
-  letter-spacing: 0.12em;
+.grid-productos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
 }
 
 /* =====================
-   COLUMNA DERECHA
-===================== */
-.columna.derecha {
-  display: flex;
-  justify-content: center;
-}
-
-.columna.derecha .contenido {
-  width: 100%;
-}
-
-/* =====================
-   LOGO CENTRAL
-===================== */
-.marca-fondo {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 2rem;
-}
-
-.marca-fondo img {
-  width: 100%;
-  max-width: 300px; /* Aquí es donde ajustas el tamaño que querías */
-  height: auto;
-}
-
-/* =====================
-   BANNER PRINCIPAL
-===================== */
-.banner-grande {
-  width: 100%;
-  height: 260px;
-  background-color: #e0e0e0;
-  margin-bottom: 1rem;
-}
-
-/* =====================
-   PAGINACIÓN
-===================== */
-.paginacion {
-  display: flex;
-  justify-content: center;
-  gap: 0.5rem;
-  margin-bottom: 3rem;
-}
-
-.paginacion span {
-  width: 10px;
-  height: 10px;
-  background-color: #ff3b30;
-  border-radius: 50%;
-}
-
-/* =====================
-   DOBLE BANNER
+   BANNERS
 ===================== */
 .doble-banner {
   display: flex;
@@ -204,90 +120,87 @@ body {
 }
 
 .banner {
-  height: 280px; /* Altura unificada */
+  height: 280px;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #eee;
   background-size: cover;
   background-position: top;
-  background-repeat: no-repeat;
   position: relative;
-  transition: transform 0.3s ease;
+  transition: 0.3s ease;
   overflow: hidden;
 }
 
-.banner-link:hover .banner {
-  transform: scale(1.02);
-}
+.banner-link:hover .banner { transform: scale(1.02); }
 
-/* Imágenes de fondo - Asegúrate de que las rutas sean correctas */
-.banner.ellas-bg {
-  background-image: url('img/PresentacionDotaciones.jpg'); 
-}
-
-.banner.ellos-bg {
-  background-image: url('img/PresentacionChaquetasChalecos.jpg'); 
-}
+.banner.ellas-bg { background-image: url('img/PresentacionDotaciones.jpg'); }
+.banner.ellos-bg { background-image: url('img/PresentacionChaquetasChalecos.jpg'); }
 
 .etiqueta {
   position: absolute;
   bottom: 0;
   width: 100%;
   background-color: #000;
-  color: #ff3b30; /* Rojo según tu estilo */
+  color: #ff3b30;
   text-align: center;
   padding: 1rem 0;
   letter-spacing: 0.3em;
   font-weight: bold;
 }
+
 /* =====================
-   MODIFICACIÓN PARA MÓVIL
-   (Añade esto al final)
+   RESPONSIVE (MÓVIL)
 ===================== */
 @media (max-width: 768px) {
+  .header {
+    width: 100%;
+    top: 0;
+    padding: 0 1.5rem;
+  }
+
+  .menu-hamburguesa {
+    display: flex; /* Aparece en móvil */
+  }
+
+  .nav {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Escondido */
+    width: 80%;
+    height: 100vh;
+    background-color: #e5e5e5;
+    flex-direction: column;
+    justify-content: center;
+    transition: 0.5s;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+  }
+
+  .nav.active {
+    right: 0; /* Entra el menú */
+  }
+
+  .nav a {
+    margin: 1.5rem 0;
+    font-size: 1.5rem;
+  }
+
+  .contenedor {
+    grid-template-columns: 1fr;
+    padding-top: 100px;
+  }
+
   .doble-banner {
-    /* Cambia de fila a columna */
-    flex-direction: column; 
-    gap: 20px;
+    flex-direction: column;
   }
 
   .banner {
-    /* Ajustamos la altura para que las fotos luzcan más en vertical */
-    height: 320px; 
+    height: 320px;
   }
-  
-  .etiqueta {
-    /* Opcional: reducir un poco el espaciado en móvil si es necesario */
-    padding: 0.8rem 0;
-    font-size: 0.9rem;
+
+  .grid-productos {
+    grid-template-columns: repeat(2, 1fr);
   }
-}
-/* =====================
-   GRID PRODUCTOS
-===================== */
-.grid-productos {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
-}
-
-.producto {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  text-decoration: none;
-  color: inherit;
-
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.producto:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
 /* =====================
@@ -303,122 +216,8 @@ body {
   flex-wrap: wrap;
 }
 
-.footer .redes img {
-  width: 24px;
-  margin: 0 0.4rem;
-}
-
 .footer .derechos {
   width: 100%;
   text-align: center;
   margin-top: 1rem;
-  font-size: 0.8rem;
 }
-
-/* =====================
-   RESPONSIVE
-===================== */
-@media (max-width: 1000px) {
-  .contenedor {
-    grid-template-columns: 1fr;
-  }
-
-  .columna.izquierda .contenido {
-    position: relative;
-    top: 0;
-  }
-
-  .grid-productos {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  .doble-banner {
-    grid-template-columns: 1fr;
-  }
-
-  .grid-productos {
-    grid-template-columns: 1fr;
-  }
-
-  .banner-grande {
-    height: 200px;
-  }
-}
-.banner-link {
-  flex: 1;
-  text-decoration: none;
-}
-
-.banner-link .banner {
-  height: 280px;
-  background-color: #dcdcdc;
-  position: relative;
-  transition: transform 0.3s ease;
-}
-
-.banner-link:hover .banner {
-  transform: scale(1.02);
-}
-
-.etiqueta {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  background-color: #000;
-  color: #ff3b30;
-  text-align: center;
-  padding: 1rem 0;
-  letter-spacing: 0.3em;
-}
-/* =====================
-   DROPDOWN HEADER
-===================== */
-.nav {
-  display: flex;
-  align-items: center;
-}
-
-.dropdown {
-  position: relative;
-}
-
-.dropdown-toggle {
-  text-decoration: none;
-  color: #000;
-  letter-spacing: 0.15em;
-  cursor: pointer;
-  padding: 0.5rem 0;
-}
-
-.dropdown-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #e5e5e5;
-  min-width: 160px;
-  display: none;
-  flex-direction: column;
-  padding: 0.5rem 0;
-  z-index: 2000;
-}
-
-.dropdown-menu a {
-  padding: 0.6rem 1.5rem;
-  text-decoration: none;
-  color: #000;
-  letter-spacing: 0.12em;
-  white-space: nowrap;
-}
-
-.dropdown-menu a:hover {
-  background-color: #000;
-  color: #ff3b30;
-}
-
-/* Mostrar dropdown en desktop */
-.dropdown:hover .dropdown-menu {
-  display: flex;
-}
-
