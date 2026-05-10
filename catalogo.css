@@ -195,7 +195,28 @@ body {
   letter-spacing: 0.3em;
   font-weight: bold;
 }
+/* =====================
+   MODIFICACIÓN PARA MÓVIL
+   (Añade esto al final)
+===================== */
+@media (max-width: 768px) {
+  .doble-banner {
+    /* Cambia de fila a columna */
+    flex-direction: column; 
+    gap: 20px;
+  }
 
+  .banner {
+    /* Ajustamos la altura para que las fotos luzcan más en vertical */
+    height: 320px; 
+  }
+  
+  .etiqueta {
+    /* Opcional: reducir un poco el espaciado en móvil si es necesario */
+    padding: 0.8rem 0;
+    font-size: 0.9rem;
+  }
+}
 /* =====================
    GRID PRODUCTOS
 ===================== */
