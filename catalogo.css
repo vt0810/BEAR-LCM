@@ -48,7 +48,53 @@ body {
   color: #000;
   letter-spacing: 0.15em;
 }
+/* --- Estilos del Botón Hamburguesa (Oculto por defecto) --- */
+.menu-hamburguesa {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
 
+.menu-hamburguesa span {
+  width: 30px;
+  height: 3px;
+  background-color: #000;
+  transition: 0.3s;
+}
+
+/* --- Responsive (Celulares) --- */
+@media (max-width: 768px) {
+  .menu-hamburguesa {
+    display: flex; /* Aparece en móviles */
+    z-index: 2001;
+  }
+
+  .nav {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Escondido a la derecha */
+    width: 70%;
+    height: 100vh;
+    background-color: #e5e5e5;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    z-index: 2000;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+  }
+
+  /* Clase que activaremos con JS */
+  .nav.active {
+    right: 0; 
+  }
+
+  .nav a {
+    margin: 1.5rem 0;
+    font-size: 1.5rem;
+  }
+}
 /* =====================
    CONTENEDOR PRINCIPAL
 ===================== */
