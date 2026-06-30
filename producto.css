@@ -48,22 +48,52 @@ body {
 }
 
 /* Imagen */
-.imagen-producto {
+/* ================= CARRUSEL DE PRODUCTO ================= */
+.carousel-container {
   width: 100%;
-  height: 600px;      /* Aumenté un poco la altura para que luzca la camisa */
-  background-color: #ffffff;
-  display: flex;      /* Para centrar la imagen si es más pequeña */
+  height: 600px;
+  position: relative;
+  background-color: #f9f9f9; /* Fondo suave para que resalte la prenda */
+  overflow: hidden; /* Oculta las imágenes que están fuera del recuadro */
+  display: flex;
   align-items: center;
-  justify-content: center;
-  overflow: hidden;   /* Evita que nada salga del cuadro */
 }
 
-/* LA REGLA QUE FALTA: Controlar la imagen real */
-.imagen-producto img {
-  width: 100%;        /* Se ajusta al ancho del contenedor */
-  height: 100%;       /* Se ajusta al alto del contenedor */
-  object-fit: contain; /* CRUCIAL: Mantiene la proporción de la camisa sin estirarla ni cortarla */
+.carousel-track {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  transition: transform 0.4s ease-in-out; /* Animación suave al deslizar */
 }
+
+.carousel-slide {
+  min-width: 100%; /* Cada imagen ocupa exactamente el 100% del contenedor */
+  height: 100%;
+  object-fit: contain; /* Evita que la camisa se deforme */
+}
+
+/* Botones de navegación */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  cursor: pointer;
+  z-index: 10;
+  font-size: 1.5rem;
+  transition: background-color 0.3s;
+  border-radius: 4px; /* Un toque estético más amable */
+}
+
+.carousel-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.prev-btn { left: 10px; }
+.next-btn { right: 10px; }
 /* Info producto */
 .info-producto {
   display: flex;
