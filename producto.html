@@ -80,6 +80,25 @@
   <footer class="footer">
     <p>TODOS LOS DERECHOS RESERVADOS</p>
   </footer>
+<script>
+    let currentSlide = 0;
+    const track = document.getElementById('track');
+    const slides = document.querySelectorAll('.carousel-slide');
 
+    function moveSlide(direction) {
+      currentSlide += direction;
+      
+      // Lógica para crear un bucle infinito
+      if (currentSlide < 0) {
+        currentSlide = slides.length - 1; // Va a la última imagen
+      } else if (currentSlide >= slides.length) {
+        currentSlide = 0; // Regresa a la primera imagen
+      }
+      
+      // Mueve la "pista" hacia la izquierda calculando el ancho
+      const slideWidth = slides[0].clientWidth;
+      track.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+    }
+  </script>
 </body>
 </html>
