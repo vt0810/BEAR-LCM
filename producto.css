@@ -227,7 +227,7 @@ body {
     text-align: center; /* Se ve mejor centrado en móviles */
   }
   
-  /* Centrar el contenido de la información (opcional, pero se ve más limpio) */
+  /* Centrar el contenido de la información */
   .info-producto {
     align-items: center;
     text-align: center;
@@ -235,5 +235,11 @@ body {
 
   .descripcion {
     text-align: center;
+  }
+
+  /* 5. TALLAS Y COLORES: Centrado para móviles */
+  .tallas, .colores {
+    justify-content: center;
+    width: 100%;
   }
 }
