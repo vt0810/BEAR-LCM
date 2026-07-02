@@ -176,3 +176,64 @@ body {
   color: #fff;
   font-size: 0.8rem;
 }
+/* ================= RESPONSIVE (MÓVILES Y PANTALLAS PEQUEÑAS) ================= */
+@media (max-width: 768px) {
+  
+  /* 1. HEADER: Lo apilamos para que el logo quede arriba y el menú abajo */
+  .header {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .nav {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .nav a {
+    margin: 0 0.5rem;
+    font-size: 1rem;
+  }
+
+  /* 2. PRODUCTO: Pasamos de 2 columnas a 1 sola columna */
+  .producto-detalle {
+    width: 90%;
+    grid-template-columns: 1fr; /* Fuerza a que todo se apile verticalmente */
+    gap: 2rem;
+    margin: 2rem auto;
+  }
+
+  /* 3. CARRUSEL: Reducimos la altura para que no ocupe toda la pantalla del celular */
+  .carousel-container {
+    height: 400px; 
+  }
+
+  /* Botones del carrusel un poco más sutiles */
+  .carousel-btn {
+    font-size: 2rem;
+    padding: 5px 10px;
+  }
+
+  /* 4. TEXTOS Y ALINEACIÓN: Reducimos el tamaño del título principal */
+  .nombre-prenda {
+    width: 90%;
+    font-size: 2.5rem;
+    margin: 1rem auto 3rem auto;
+    text-align: center; /* Se ve mejor centrado en móviles */
+  }
+  
+  /* Centrar el contenido de la información (opcional, pero se ve más limpio) */
+  .info-producto {
+    align-items: center;
+    text-align: center;
+  }
+
+  .descripcion {
+    text-align: center;
+  }
+}
