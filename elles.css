@@ -138,6 +138,16 @@ body {
 
 }
 
+.rompevientos {
+  background-image: url('img/ROMPEVIENTOS/ROMPEVIENTOS NEGRA.png');
+
+.chaleco-periodista {
+  background-image: url('img/CHALECO TIPO PERIODISTA/CHALECO TIPO PERIODISTA.png');
+
+  .chaleco-acolchado {
+  background-image: url('img/CHALECO ACOLCHADO/CHALECO ACOLCHADO.png');
+
+
 /* =====================
    FOOTER
 ===================== */
