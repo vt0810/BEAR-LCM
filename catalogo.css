@@ -184,8 +184,7 @@ body {
   }
   .nav.active { right: 0; }
   .nav a { margin: 1.5rem 0; font-size: 1.5rem; }
-
-  /* Contenedor pasa a Flex para poder reordenar los elementos */
+/* Contenedor pasa a Flex para poder reordenar los elementos */
   .contenedor { 
     display: flex; 
     flex-direction: column; 
@@ -195,22 +194,22 @@ body {
     padding-right: 5%; 
   }
   
-  /* Reordenamos las columnas visualmente */
+  /* Usamos 'order' para decirle al navegador qué va primero */
   .columna.derecha { 
     width: 100%; 
     display: block; 
-    order: 1; /* Manda el lado derecho (Logo, banners, productos) arriba */
+    order: 1; /* Esto hace que la derecha (Logo/Banners) suba al tope */
   }
 
   .columna.izquierda { 
     width: 100%; 
     display: block; 
-    order: 2; /* Manda la información de contacto al fondo */
+    order: 2; /* Esto manda el texto de contacto al final */
   }
 
   .columna.izquierda .contenido { 
     position: static; 
-    margin-top: 3rem; /* Espacio para separarlo del bloque de arriba */
+    margin-top: 3rem; 
     margin-bottom: 2rem; 
     text-align: center; 
   }
