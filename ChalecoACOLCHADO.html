@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Camisa Oxford | LCM</title>
+
+  <!-- Bebas Neue -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="producto.css">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <img src="img/LCMSecundarioRojo-04.png" alt="Bear Jackets">
+    <nav class="nav">
+      <a href="index.html">INICIO</a>
+      <a href="catalogo-lcm.html">CATÁLOGO LCM</a>
+      <a href="#">NOSOTROS</a>
+      <a href="#">GUÍA DE TALLAS</a>
+    </nav>
+  </header>
+  
+  <!-- NOMBRE PRENDA -->
+  <h1 class="nombre-prenda">CHALECO ACOLCHADO</h1>
+  <!-- CONTENEDOR PRODUCTO -->
+  <main class="producto-detalle">
+
+    <!-- IMAGEN -->
+  <div class="carousel-container">
+      <button class="carousel-btn prev-btn" onclick="moveSlide(-1)">&#10094;</button>
+      
+      <div class="carousel-track" id="track">
+        <img src="img/CHALECO ACOLCHADO/CHALECO ACOLCHADO.png" alt="Chaleco acolchado negro" class="carousel-slide">
+        <img src="img/CHALECO ACOLCHADO/CHALECO ACOLCHADO AZUL OSCURO.png" alt="Chaleco acolchado azul oscuro" class="carousel-slide">
+      </div>
+      
+      <button class="carousel-btn next-btn" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+
+    <!-- INFO -->
+    <div class="info-producto">
+
+      <p class="descripcion-titulo">Descripción:</p>
+      <p class="descripcion">
+        Chaleco acolchado  semi- impermeable con tres bolsillos (dos externos con cremallera y uno interno.) 
+        CONDICIONES: Disponible a partir de 3 unidades (en color negro y azul oscuro) 
+        Personalización de color de tela a partir de 12 unidades (Ver disponibilidad)
+        DISPONIBLE MUJER Y HOMBRE 
+      </p>
+
+      <h2>TALLAS</h2>
+      <div class="tallas">
+        <span>S</span>
+        <span>M</span>
+        <span>L</span>
+        <span>XL</span>
+      </div>
+
+      <h2>COLORES</h2>
+      <div class="colores">
+        <span class="color negro"></span>
+        <span class="color Azuloscuro"></span>
+      </div>
+
+      <h2>PRECIO</h2>
+      <p class="precio">$65.000 COP</p>
+
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>TODOS LOS DERECHOS RESERVADOS</p>
+  </footer>
+<script>
+    let currentSlide = 0;
+    const track = document.getElementById('track');
+    const slides = document.querySelectorAll('.carousel-slide');
+
+    function moveSlide(direction) {
+      currentSlide += direction;
+      
+      // Lógica para crear un bucle infinito
+      if (currentSlide < 0) {
+        currentSlide = slides.length - 1; // Va a la última imagen
+      } else if (currentSlide >= slides.length) {
+        currentSlide = 0; // Regresa a la primera imagen
+      }
+      
+      // Mueve la "pista" hacia la izquierda calculando el ancho
+      const slideWidth = slides[0].clientWidth;
+      track.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+    }
+  </script>
+</body>
+</html>
