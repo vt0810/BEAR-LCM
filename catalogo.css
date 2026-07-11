@@ -47,7 +47,7 @@ body {
 .menu-hamburguesa { display: none; } /* Oculto en PC */
 
 /* =====================
-   3. ESTRUCTURA PRINCIPAL (PC)
+   CONTENEDOR PRINCIPAL
 ===================== */
 .contenedor {
   display: grid;
@@ -58,17 +58,43 @@ body {
   margin: 0 auto;
   padding-top: 160px;
   padding-bottom: 4rem;
+  align-items: start; /* EL CAMBIO CLAVE: Evita que las columnas se estiren deformando el contenido */
 }
 
 /* Columna Izquierda (Info) */
-.columna.izquierda { display: flex; justify-content: flex-start; }
-.columna.izquierda .contenido { position: sticky; top: 180px; }
-.columna.izquierda h1 { font-size: 1.6rem; margin-bottom: 2rem; }
-.columna.izquierda p { font-size: 0.9rem; line-height: 1.6; margin-bottom: 2rem; letter-spacing: 0.12em; }
+.columna.izquierda { 
+  display: block; /* Cambiado a block para un flujo natural vertical */
+}
+.columna.izquierda .contenido { 
+  position: sticky; 
+  top: 180px; 
+}
+.columna.izquierda h1 { 
+  font-size: 1.6rem; 
+  margin-bottom: 2rem; 
+}
+.columna.izquierda p { 
+  font-size: 0.9rem; 
+  line-height: 1.6; 
+  margin-bottom: 2rem; 
+  letter-spacing: 0.12em; 
+}
 
 /* Columna Derecha (Catálogo) */
-.columna.derecha { display: flex; justify-content: center; }
-.columna.derecha .contenido { width: 100%; }
+.columna.derecha { 
+  display: block; /* Quitamos el flex centrado para que las imágenes puedan crecer hacia abajo */
+}
+.columna.derecha .contenido { 
+  width: 100%; 
+}
+
+/* REGLA DE ORO PARA LAS IMÁGENES DENTRO DEL CATÁLOGO */
+.columna.derecha .contenido img {
+  width: 100%; /* Ocupa todo el ancho de la columna derecha */
+  height: auto; /* Respeta el largo real y proporcional de cada foto */
+  display: block; 
+  margin-bottom: 1.5rem; /* Espacio entre una foto y la que sigue abajo */
+}
 
 /* =====================
    4. ELEMENTOS DEL CATÁLOGO
