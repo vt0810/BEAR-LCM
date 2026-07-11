@@ -21,19 +21,28 @@ ue<!DOCTYPE html>
     <img src="img/LCMSecundarioRojo-04.png" alt="Bear Jackets">
     <nav class="nav">
       <a href="index.html">INICIO</a>
-      <a href="catalogo-bear.html">CATÁLOGOS</a>
+       <a href="catalogo-lcm.html">CATÁLOGO LCM</a>
       <a href="#">NOSOTROS</a>
       <a href="#">GUÍA DE TALLAS</a>
     </nav>
   </header>
-
+  
+ <!-- NOMBRE PRENDA -->
+  <h1 class="nombre-prenda">CAMISA JEAN</h1>
   <!-- CONTENEDOR PRODUCTO -->
-  <main class="producto-detalle">
+   <main class="producto-detalle">
 
     <!-- IMAGEN -->
-    <div class="imagen-producto">
-       <img src="img/CAMISA DE JEAN.png" alt="Camisa Jean">
+   <div class="carousel-container">
+      <button class="carousel-btn prev-btn" onclick="moveSlide(-1)">&#10094;</button>
+      
+      <div class="carousel-track" id="track">
+        <img src="img/JEAN/CAMISA DE JEAN.png" alt="Camisa jean" class="carousel-slide">
+      </div>
+      
+      <button class="carousel-btn next-btn" onclick="moveSlide(1)">&#10095;</button>
     </div>
+
 
     <!-- INFO -->
     <div class="info-producto">
@@ -63,13 +72,29 @@ ue<!DOCTYPE html>
 
   </main>
 
-  <!-- NOMBRE PRENDA -->
-  <h1 class="nombre-prenda">CAMISA DE JEAN</h1>
-
   <!-- FOOTER -->
   <footer class="footer">
     <p>TODOS LOS DERECHOS RESERVADOS</p>
   </footer>
+<script>
+    let currentSlide = 0;
+    const track = document.getElementById('track');
+    const slides = document.querySelectorAll('.carousel-slide');
 
+    function moveSlide(direction) {
+      currentSlide += direction;
+      
+      // Lógica para crear un bucle infinito
+      if (currentSlide < 0) {
+        currentSlide = slides.length - 1; // Va a la última imagen
+      } else if (currentSlide >= slides.length) {
+        currentSlide = 0; // Regresa a la primera imagen
+      }
+      
+      // Mueve la "pista" hacia la izquierda calculando el ancho
+      const slideWidth = slides[0].clientWidth;
+      track.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+    }
+  </script>
 </body>
 </html>
