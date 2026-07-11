@@ -124,16 +124,16 @@ body {
 
 .banner {
   position: relative;
-  overflow: hidden; /* Evita que la foto se salga al hacer zoom */
+  overflow: hidden; 
   display: block;
 }
 
-/* Reglas específicas para las imágenes de los banners */
+/* Control estricto de las imágenes físicas */
 .banner img {
   width: 100%; 
   height: auto; 
   display: block;
-  margin-bottom: 0 !important; /* Anula el margen que tienen las imágenes generales del catálogo */
+  margin-bottom: 0 !important; 
   transition: transform 0.4s ease; 
 }
 
@@ -153,31 +153,6 @@ body {
   font-weight: bold;
   z-index: 10;
 }
-/* =====================
-   6. GRID DE PRODUCTOS
-===================== */
-.grid-productos {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 en PC */
-  gap: 1.5rem;
-}
-
-.producto {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
-  color: inherit;
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  background-color: #e0e0e0; /* Recuperamos el cuadro gris */
-  height: 220px;             /* Altura del producto */
-  text-align: center;
-  padding: 1rem;
-}
-.producto:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
-
 /* =====================
    7. FOOTER
 ===================== */
