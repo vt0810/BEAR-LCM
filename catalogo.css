@@ -107,20 +107,51 @@ body {
 .paginacion { display: flex; justify-content: center; gap: 0.5rem; margin-bottom: 3rem; }
 .paginacion span { width: 10px; height: 10px; background-color: #ff3b30; border-radius: 50%; }
 
+/* =====================
+   5. DOBLE BANNER
+===================== */
+.doble-banner { 
+  display: flex; 
+  gap: 15px; 
+  width: 100%; 
+  margin: 2rem 0; 
+}
+
+.banner-link { 
+  flex: 1; 
+  text-decoration: none; 
+}
+
 .banner {
-  aspect-ratio: 1 / 1; /* Ajusta esto (ej. 4/3 o 16/9) según la forma original de tu foto */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  
-  background-color: #f4f5f7; /* DEBE SER IGUAL al fondo de tus modelos para que no se note un cuadro */
-  background-size: contain; /* AQUÍ ESTÁ LA MAGIA PARA QUE NO SE CORTE */
-  background-repeat: no-repeat;
-  background-position: center top;
-  
   position: relative;
-  transition: transform 0.3s ease;
-  overflow: hidden;
+  overflow: hidden; /* Evita que la foto se salga al hacer zoom */
+  display: block;
+}
+
+/* Reglas específicas para las imágenes de los banners */
+.banner img {
+  width: 100%; 
+  height: auto; 
+  display: block;
+  margin-bottom: 0 !important; /* Anula el margen que tienen las imágenes generales del catálogo */
+  transition: transform 0.4s ease; 
+}
+
+.banner-link:hover .banner img { 
+  transform: scale(1.05); 
+}
+
+.etiqueta {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #000;
+  color: #ff3b30;
+  text-align: center;
+  padding: 1rem 0;
+  letter-spacing: 0.3em;
+  font-weight: bold;
+  z-index: 10;
 }
 /* =====================
    6. GRID DE PRODUCTOS
