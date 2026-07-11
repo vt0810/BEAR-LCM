@@ -120,11 +120,11 @@ body {
 /* ================= COLORES ================= */
 
 .colores {
-  display: inline-block;
-  display: flex;
+  display: flex; /* Quitamos inline-block */
   gap: 1rem;
   margin-top: 0.5rem;
-  border: 1px solid #ccc;
+  /* Eliminamos la línea: border: 1px solid #ccc; */
+  padding: 0; /* Aseguramos que no haya relleno extra */
 }
 
 .color {
@@ -147,6 +147,10 @@ body {
 .blanco { background-color: #ffffff; }
 .gris { background-color: #5b5959; }
 .azul { background-color: #6eb3ed; }
+.grisjaspe { background-color: #8C8C8C; }
+.grisoscuro { background-color: #3D3D40; }
+.negro{ background-color: #0C0C0D; }
+.Azuloscuro{ background-color: #2A2D40; }
 
 /* ================= PRECIO ================= */
 
