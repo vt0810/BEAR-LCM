@@ -14,14 +14,14 @@ body {
 /* ================= HEADER ================= */
 
 .header {
-  width: 60%;
+  width: 100%; /* Cambiamos 60% por 100% para que ocupe todo el ancho */
   height: 80px;
-  margin: 0 auto;
   background-color: #e5e5e5;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 2rem;
+  /* Agregamos padding lateral para que los elementos no queden pegados al borde */
+  padding: 0 5%; 
 }
 
 .header img {
