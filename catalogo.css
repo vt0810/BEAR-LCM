@@ -84,10 +84,26 @@ body {
 /* =====================
    5. DOBLE BANNER
 ===================== */
-.doble-banner { display: flex; gap: 15px; width: 100%; margin: 2rem 0; }
-.banner-link { flex: 1; text-decoration: none; }
+.doble-banner { 
+  display: flex; 
+  gap: 15px; 
+  width: 100%; 
+  margin: 2rem 0; 
+}
+
+.banner-link { 
+  flex: 1; 
+  text-decoration: none; 
+}
+
 .banner {
-  height: 280px;
+  /* 1. ELIMINAMOS el height: 280px; */
+  /* 2. AGREGAMOS aspect-ratio. 
+     Esto mantiene la proporción exacta sin importar el tamaño de la pantalla.
+     Si tu imagen es cuadrada, usa 1 / 1. 
+     Si es un rectángulo tradicional, usa 4 / 3 o 16 / 9. */
+  aspect-ratio: 4 / 3; 
+  
   display: flex;
   align-items: center;
   justify-content: center;
@@ -98,10 +114,18 @@ body {
   transition: transform 0.3s ease;
   overflow: hidden;
 }
-.banner-link:hover .banner { transform: scale(1.02); }
 
-.banner.ellas-bg { background-image: url('img/PresentacionDotaciones.jpg'); }
-.banner.ellos-bg { background-image: url('img/PresentacionChaquetasChalecos.jpg'); }
+.banner-link:hover .banner { 
+  transform: scale(1.02); 
+}
+
+.banner.ellas-bg { 
+  background-image: url('img/PresentacionDotaciones.jpg'); 
+}
+
+.banner.ellos-bg { 
+  background-image: url('img/PresentacionChaquetasChalecos.jpg'); 
+}
 
 .etiqueta {
   position: absolute;
