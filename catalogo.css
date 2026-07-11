@@ -185,16 +185,41 @@ body {
   .nav.active { right: 0; }
   .nav a { margin: 1.5rem 0; font-size: 1.5rem; }
 
-  /* Contenedor pasa de Grid a Block (Todo hacia abajo) */
-  .contenedor { display: block; padding-top: 100px; width: 100%; padding-left: 5%; padding-right: 5%; }
+  /* Contenedor pasa a Flex para poder reordenar los elementos */
+  .contenedor { 
+    display: flex; 
+    flex-direction: column; 
+    padding-top: 100px; 
+    width: 100%; 
+    padding-left: 5%; 
+    padding-right: 5%; 
+  }
   
-  .columna.izquierda, .columna.derecha { width: 100%; display: block; }
-  .columna.izquierda .contenido { position: static; margin-bottom: 2rem; text-align: center; }
+  /* Reordenamos las columnas visualmente */
+  .columna.derecha { 
+    width: 100%; 
+    display: block; 
+    order: 1; /* Manda el lado derecho (Logo, banners, productos) arriba */
+  }
 
-/* Banners e Imágenes */
+  .columna.izquierda { 
+    width: 100%; 
+    display: block; 
+    order: 2; /* Manda la información de contacto al fondo */
+  }
+
+  .columna.izquierda .contenido { 
+    position: static; 
+    margin-top: 3rem; /* Espacio para separarlo del bloque de arriba */
+    margin-bottom: 2rem; 
+    text-align: center; 
+  }
+
+  /* Banners e Imágenes */
   .doble-banner { flex-direction: column; }
-  .banner { height: auto; } /* QUITAMOS LOS 250px FIJOS */
+  .banner { height: auto; } 
   .banner-grande { height: 180px; }
+  
   /* Productos pasan a 2 columnas */
   .grid-productos { grid-template-columns: repeat(2, 1fr); gap: 10px; }
   
